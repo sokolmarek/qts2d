@@ -4,9 +4,10 @@
 
 # QTS2D: Quantum-Based Image Encoding of Time Series
 
-[![PyPI version](https://badge.fury.io/py/qts2d.svg)](https://badge.fury.io/py/qts2d)
+[![PyPI version](https://img.shields.io/pypi/v/qts2d)](https://pypi.python.org/pypi/qts2d)
+[![PyPI wheel](https://img.shields.io/pypi/wheel/qts2d)](https://pypi.python.org/pypi/qts2d)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/qts2d)](https://pypi.python.org/pypi/qts2d)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/qts2d.svg)](https://img.shields.io/pypi/pyversions/qts2d.svg)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/qts2d.svg)](https://pypi.python.org/pypi/qts2d)
 [![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 **QTS2D** is a Python library for encoding time series data into image representations using quantum computing principles. These image-based representations can then be used as input for various machine learning models, particularly Convolutional Neural Networks (CNNs), for tasks like time series classification or forecasting.
