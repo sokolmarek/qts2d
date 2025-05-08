@@ -1,6 +1,6 @@
 [project]
 name = "qts2d"
-version = "1.0.0"
+version = "0.1.0"
 description = "Quantum-Based Image Encoding of Time Series"
 readme = "README.md"
 authors = [
