@@ -34,7 +34,7 @@ pip install qts2d
 or using pip+git for the latest version of the code:
 
 ```bash
-pip install git+
+pip install git+https://github.com/sokolmarek/qts2d
 ```
 
 The library requires Python >= 3.10 and the following main dependencies:
