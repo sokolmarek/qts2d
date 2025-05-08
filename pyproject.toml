@@ -1,0 +1,82 @@
+[project]
+name = "qts2d"
+version = "1.0.0"
+description = "Quantum-Based Image Encoding of Time Series"
+readme = "README.md"
+authors = [
+    { name = "Marek Sokol", email = "marek.sokol@cvut.cz" }
+]
+license = {file = "LICENSE.txt"}
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "numpy>=2.2.5",
+    "scikit-learn>=1.6.1",
+    "qiskit==1.4.2",
+    "qiskit-aer==0.17.0",
+    "qiskit-machine-learning==0.8.2",
+    "pyts>=0.13.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/sokolmarek/qts2d"
+Repository = "https://github.com/sokolmarek/qts2d"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+extend-exclude = ["ruff"]
+line-length = 88
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle (error)
+    "F",   # pyflakes
+    "B",   # bugbear
+    "B9",
+    "C4",  # flake8-comprehensions
+    "SIM", # flake8-simplify
+    "I",   # isort
+    "UP",  # pyupgrade
+    "PIE", # flake8-pie
+    "PGH", # pygrep-hooks
+    "PYI", # flake8-pyi
+    "RUF",
+]
+
+ignore = [
+    "B011",
+    "E501",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "qts2d/tests",
+    "qts2d/encoding/tests",
+]
+
+[tool.uv.workspace]
+members = ["help"]
+
+[tool.uv.sources]
+qts2d = { path = "qts2d", editable = true }
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.8",
+]

@@ -1,0 +1,25 @@
+# This workflows will upload a Python Package using Twine when a release is created
+# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
+
+name: Upload Python Package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+
+    - name: Build the package
+      run: python3 -m pip install --upgrade build && python3 -m build
+
+    - name: Publish the package to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
