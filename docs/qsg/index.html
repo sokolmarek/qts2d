@@ -1,0 +1,1517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../qrp/">
+      
+      
+        <link rel="next" href="../references/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Quantum Spectrogram (QSG) - QTS2D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quantum-spectrogram-qsg" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QTS2D" class="md-header__button md-logo" aria-label="QTS2D" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QTS2D
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quantum Spectrogram (QSG)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QTS2D" class="md-nav__button md-logo" aria-label="QTS2D" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QTS2D
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QTS2D Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qgaf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Gramian Angular Field (QGAF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qmtf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Markov Transition Field (QMTF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qrp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Recurrence Plot (QRP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Quantum Spectrogram (QSG)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Spectrogram (QSG)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      qsg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG" class="md-nav__link">
+    <span class="md-ellipsis">
+      QSG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QSG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG--attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG.fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      fit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG.transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg" class="md-nav__link">
+    <span class="md-ellipsis">
+      qsg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG" class="md-nav__link">
+    <span class="md-ellipsis">
+      QSG
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QSG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG--attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG.fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      fit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qsg.QSG.transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="quantum-spectrogram-qsg">Quantum Spectrogram (QSG)</h1>
+<p>QSG encodes time series into spectrograms using Quantum Fourier Transform (QFT) on windowed segments.</p>
+<h2 id="parameters">Parameters</h2>
+<ul>
+<li><code>segment_length</code>: Length of each segment (power of 2)</li>
+<li><code>overlap_ratio</code>: Overlap between segments (float)</li>
+<li><code>window_name</code>: Window function (str)</li>
+<li><code>shots</code>: Number of quantum circuit shots (int)</li>
+<li><code>scaling</code>: 'minmax', 'standard', or None</li>
+<li><code>flatten</code>: Flatten output (bool)</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">from qts2d.encoding import QSG
+qsg = QSG(segment_length=128, overlap_ratio=0.5, scaling='minmax')
+X_qsg = qsg.fit_transform(X)
+</code></pre>
+<hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="qts2d.encoding.qsg"></a>
+    <div class="doc doc-contents first">
+
+        <p>Quantum Spectrogram (QSG) implementation.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="qts2d.encoding.qsg.QSG" class="doc doc-heading">
+            <code>QSG</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="qts2d.base_transformer.BaseQuantumTransformer">BaseQuantumTransformer</span></code></p>
+
+
+        <p>Quantum Spectrogram transformer.</p>
+<p>Encodes time series into spectrograms using Quantum Fourier Transform (QFT)
+on windowed segments of the time series.</p>
+<h4 id="qts2d.encoding.qsg.QSG--parameters">Parameters</h4>
+<p>segment_length : int, default=128
+    Length of each segment for QFT. Must be a power of 2.
+    This also determines the number of qubits used for QFT (log2(segment_length)).
+overlap_ratio : float, default=0.5
+    Ratio of segment_length for overlap between consecutive segments.
+    Must be in the range [0, 1). For example, 0.5 means 50% overlap.
+window_name : str or callable, default='hann'
+    The window function to apply to each segment. See <code>scipy.signal.get_window</code>.
+shots : int, default=100
+    Number of shots for quantum circuit execution when simulating measurements.
+    Higher shots reduce variance in the estimated probabilities.
+scaling : str or None, default='minmax'
+    Method to scale the input time series before segmentation and encoding.
+    Inherited from <code>BaseQuantumTransformer</code>. Options: 'minmax', 'standard', None.
+flatten : bool, default=False
+    If True, flatten the output spectrogram for each sample into a 1D array.
+    The shape will be (n_samples, num_frequency_bins * num_time_segments).
+    If False, the shape will be (n_samples, num_frequency_bins, num_time_segments).</p>
+<h4 id="qts2d.encoding.qsg.QSG--attributes">Attributes</h4>
+<p>n_features_in_ : int
+    The number of features (timestamps) seen during <code>fit</code>.
+_n_qubits : int
+    Number of qubits required, calculated as log2(segment_length).
+_overlap_samples : int
+    Number of samples for overlap, calculated from overlap_ratio.
+_stride : int
+    Step size between start of consecutive segments.
+_window : np.ndarray
+    The windowing array.
+_num_freq_bins : int
+    Number of frequency bins in the output spectrogram (segment_length / 2).
+_num_time_segments : int
+    Number of time segments (frames) in the output spectrogram, determined during fit.
+_effective_length_for_transform : int
+    The length to which input series are padded/truncated in <code>transform</code>
+    to ensure a fixed number of time segments.
+_is_fitted : bool
+    True if the transformer has been fitted.</p>
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>qts2d\encoding\qsg.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">QSG</span><span class="p">(</span><span class="n">BaseQuantumTransformer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Quantum Spectrogram transformer.</span>
+
+<span class="sd">    Encodes time series into spectrograms using Quantum Fourier Transform (QFT)</span>
+<span class="sd">    on windowed segments of the time series.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    segment_length : int, default=128</span>
+<span class="sd">        Length of each segment for QFT. Must be a power of 2.</span>
+<span class="sd">        This also determines the number of qubits used for QFT (log2(segment_length)).</span>
+<span class="sd">    overlap_ratio : float, default=0.5</span>
+<span class="sd">        Ratio of segment_length for overlap between consecutive segments.</span>
+<span class="sd">        Must be in the range [0, 1). For example, 0.5 means 50% overlap.</span>
+<span class="sd">    window_name : str or callable, default=&#39;hann&#39;</span>
+<span class="sd">        The window function to apply to each segment. See `scipy.signal.get_window`.</span>
+<span class="sd">    shots : int, default=100</span>
+<span class="sd">        Number of shots for quantum circuit execution when simulating measurements.</span>
+<span class="sd">        Higher shots reduce variance in the estimated probabilities.</span>
+<span class="sd">    scaling : str or None, default=&#39;minmax&#39;</span>
+<span class="sd">        Method to scale the input time series before segmentation and encoding.</span>
+<span class="sd">        Inherited from `BaseQuantumTransformer`. Options: &#39;minmax&#39;, &#39;standard&#39;, None.</span>
+<span class="sd">    flatten : bool, default=False</span>
+<span class="sd">        If True, flatten the output spectrogram for each sample into a 1D array.</span>
+<span class="sd">        The shape will be (n_samples, num_frequency_bins * num_time_segments).</span>
+<span class="sd">        If False, the shape will be (n_samples, num_frequency_bins, num_time_segments).</span>
+
+<span class="sd">    Attributes</span>
+<span class="sd">    ----------</span>
+<span class="sd">    n_features_in_ : int</span>
+<span class="sd">        The number of features (timestamps) seen during `fit`.</span>
+<span class="sd">    _n_qubits : int</span>
+<span class="sd">        Number of qubits required, calculated as log2(segment_length).</span>
+<span class="sd">    _overlap_samples : int</span>
+<span class="sd">        Number of samples for overlap, calculated from overlap_ratio.</span>
+<span class="sd">    _stride : int</span>
+<span class="sd">        Step size between start of consecutive segments.</span>
+<span class="sd">    _window : np.ndarray</span>
+<span class="sd">        The windowing array.</span>
+<span class="sd">    _num_freq_bins : int</span>
+<span class="sd">        Number of frequency bins in the output spectrogram (segment_length / 2).</span>
+<span class="sd">    _num_time_segments : int</span>
+<span class="sd">        Number of time segments (frames) in the output spectrogram, determined during fit.</span>
+<span class="sd">    _effective_length_for_transform : int</span>
+<span class="sd">        The length to which input series are padded/truncated in `transform`</span>
+<span class="sd">        to ensure a fixed number of time segments.</span>
+<span class="sd">    _is_fitted : bool</span>
+<span class="sd">        True if the transformer has been fitted.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segment_length</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">overlap_ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">window_name</span><span class="o">=</span><span class="s1">&#39;hann&#39;</span><span class="p">,</span>
+                 <span class="n">shots</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">scaling</span><span class="o">=</span><span class="s1">&#39;minmax&#39;</span><span class="p">,</span> <span class="n">flatten</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">scaling</span><span class="o">=</span><span class="n">scaling</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">=</span> <span class="n">segment_length</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overlap_ratio</span> <span class="o">=</span> <span class="n">overlap_ratio</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window_name</span> <span class="o">=</span> <span class="n">window_name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">shots</span> <span class="o">=</span> <span class="n">shots</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">flatten</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> \
+           <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">&amp;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;segment_length must be a positive integer and a power of 2.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">overlap_ratio</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span> <span class="o">|</span> <span class="nb">int</span><span class="p">))</span> <span class="ow">or</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">overlap_ratio</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;overlap_ratio must be a number in [0, 1).&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">shots</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">shots</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;shots must be a positive integer.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;`flatten` must be a boolean.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_quantum_spectrum_for_segment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segment_data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Computes the &#39;quantum spectrum&#39; for a single signal segment using QFT</span>
+<span class="sd">        and simulated measurements.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">segment_data</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Segment length </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">segment_data</span><span class="p">)</span><span class="si">}</span><span class="s2"> must match &quot;</span>
+                             <span class="sa">f</span><span class="s2">&quot;transformer&#39;s segment_length </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">segment_data</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">norm</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">)</span>
+
+        <span class="n">normalized_segment</span> <span class="o">=</span> <span class="n">segment_data</span> <span class="o">/</span> <span class="n">norm</span>
+
+        <span class="n">qr</span> <span class="o">=</span> <span class="n">QuantumRegister</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_qubits</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">)</span>
+        <span class="n">cr</span> <span class="o">=</span> <span class="n">ClassicalRegister</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_qubits</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+        <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span> <span class="n">cr</span><span class="p">)</span>
+
+        <span class="n">initial_state</span> <span class="o">=</span> <span class="n">qi</span><span class="o">.</span><span class="n">Statevector</span><span class="p">(</span><span class="n">normalized_segment</span><span class="p">)</span>
+        <span class="n">qc</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">initial_state</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">qr</span><span class="p">)</span>
+        <span class="n">qc</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
+
+        <span class="n">qft_gate</span> <span class="o">=</span> <span class="n">QFT</span><span class="p">(</span><span class="n">num_qubits</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_qubits</span><span class="p">,</span> <span class="n">approximation_degree</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">do_swaps</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                       <span class="n">inverse</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">insert_barriers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;QFT&#39;</span><span class="p">)</span>
+        <span class="n">qc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">qft_gate</span><span class="p">,</span> <span class="n">qr</span><span class="p">)</span>
+        <span class="n">qc</span><span class="o">.</span><span class="n">barrier</span><span class="p">()</span>
+
+        <span class="n">qc</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qr</span><span class="p">,</span> <span class="n">cr</span><span class="p">)</span>
+
+        <span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;statevector&#39;</span><span class="p">)</span>
+        <span class="n">compiled_circuit</span> <span class="o">=</span> <span class="n">transpile</span><span class="p">(</span><span class="n">qc</span><span class="p">,</span> <span class="n">simulator</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">compiled_circuit</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shots</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+        <span class="n">counts</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_counts</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
+
+        <span class="n">probabilities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">):</span>
+            <span class="n">binary_representation</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;0</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_n_qubits</span><span class="si">}</span><span class="s1">b&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">binary_representation</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+                <span class="n">probabilities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">binary_representation</span><span class="p">]</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">shots</span>
+
+        <span class="n">quantum_power_spectrum</span> <span class="o">=</span> <span class="n">probabilities</span> <span class="o">*</span> <span class="p">(</span><span class="n">norm</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">quantum_power_spectrum</span>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fit the QSG transformer.</span>
+
+<span class="sd">        Validates input and parameters. Determines fixed dimensions for the</span>
+<span class="sd">        output spectrograms based on `n_features_in_` (length of time series).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> 
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_n_qubits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_overlap_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">overlap_ratio</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_overlap_samples</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;segment_length (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="si">}</span><span class="s2">) and overlap_ratio &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">overlap_ratio</span><span class="si">}</span><span class="s2">) result in a non-positive stride &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_stride</span><span class="si">}</span><span class="s2">). Decrease overlap_ratio or increase segment_length.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_window</span> <span class="o">=</span> <span class="n">get_window</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">)</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid window_name: &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">window_name</span><span class="si">}</span><span class="s2">&#39;. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># noqa: B904</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_freq_bins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">//</span> <span class="mi">2</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="p">:</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                 <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">)</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_is_fitted</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform time series into Quantum Spectrograms.&quot;&quot;&quot;</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;_is_fitted&#39;</span><span class="p">,</span> <span class="s1">&#39;_n_qubits&#39;</span><span class="p">,</span> <span class="s1">&#39;_overlap_samples&#39;</span><span class="p">,</span> 
+                               <span class="s1">&#39;_stride&#39;</span><span class="p">,</span> <span class="s1">&#39;_window&#39;</span><span class="p">,</span> <span class="s1">&#39;_num_freq_bins&#39;</span><span class="p">,</span>
+                               <span class="s1">&#39;_num_time_segments&#39;</span><span class="p">,</span> <span class="s1">&#39;_effective_length_for_transform&#39;</span><span class="p">])</span>
+
+        <span class="n">X_orig</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ensure_2d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">X_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Input has </span><span class="si">{</span><span class="n">X_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> features (timestamps), but transformer &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;was fitted with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="si">}</span><span class="s2"> features.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">X_processed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preprocess</span><span class="p">(</span><span class="n">X_orig</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+
+        <span class="n">n_samples</span> <span class="o">=</span> <span class="n">X_processed</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">all_spectrograms_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+            <span class="n">signal_single</span> <span class="o">=</span> <span class="n">X_processed</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+            <span class="n">current_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">signal_single</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">current_len</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span><span class="p">:</span>
+                <span class="n">pad_amount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span> <span class="o">-</span> <span class="n">current_len</span>
+                <span class="n">signal_padded_final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">signal_single</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pad_amount</span><span class="p">),</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">current_len</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span><span class="p">:</span>
+                <span class="n">signal_padded_final</span> <span class="o">=</span> <span class="n">signal_single</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">signal_padded_final</span> <span class="o">=</span> <span class="n">signal_single</span>
+
+            <span class="n">q_spectrogram_ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_freq_bins</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span><span class="p">))</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">all_spectrograms_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">q_spectrogram_ts</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span><span class="p">):</span>
+                <span class="n">start</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span>
+                <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span>
+                <span class="n">segment</span> <span class="o">=</span> <span class="n">signal_padded_final</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">:</span>
+                    <span class="n">segment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">segment</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">segment</span><span class="p">)),</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+                <span class="n">windowed_segment</span> <span class="o">=</span> <span class="n">segment</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_window</span>
+                <span class="n">full_q_spectrum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_quantum_spectrum_for_segment</span><span class="p">(</span><span class="n">windowed_segment</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+                <span class="n">q_spectrogram_ts</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">full_q_spectrum</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_freq_bins</span><span class="p">]</span>
+
+            <span class="n">all_spectrograms_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">q_spectrogram_ts</span><span class="p">)</span>
+
+        <span class="n">output_spectrograms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_spectrograms_list</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">output_spectrograms</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">output_spectrograms</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="qts2d.encoding.qsg.QSG.fit" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Fit the QSG transformer.</p>
+<p>Validates input and parameters. Determines fixed dimensions for the
+output spectrograms based on <code>n_features_in_</code> (length of time series).</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>qts2d\encoding\qsg.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Fit the QSG transformer.</span>
+
+<span class="sd">    Validates input and parameters. Determines fixed dimensions for the</span>
+<span class="sd">    output spectrograms based on `n_features_in_` (length of time series).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> 
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_n_qubits</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">))</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_overlap_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">overlap_ratio</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_overlap_samples</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;segment_length (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="si">}</span><span class="s2">) and overlap_ratio &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">overlap_ratio</span><span class="si">}</span><span class="s2">) result in a non-positive stride &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_stride</span><span class="si">}</span><span class="s2">). Decrease overlap_ratio or increase segment_length.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_window</span> <span class="o">=</span> <span class="n">get_window</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid window_name: &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">window_name</span><span class="si">}</span><span class="s2">&#39;. Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># noqa: B904</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_num_freq_bins</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">//</span> <span class="mi">2</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="p">:</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+             <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">)</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">+</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_is_fitted</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="qts2d.encoding.qsg.QSG.transform" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Transform time series into Quantum Spectrograms.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>qts2d\encoding\qsg.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Transform time series into Quantum Spectrograms.&quot;&quot;&quot;</span>
+    <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;_is_fitted&#39;</span><span class="p">,</span> <span class="s1">&#39;_n_qubits&#39;</span><span class="p">,</span> <span class="s1">&#39;_overlap_samples&#39;</span><span class="p">,</span> 
+                           <span class="s1">&#39;_stride&#39;</span><span class="p">,</span> <span class="s1">&#39;_window&#39;</span><span class="p">,</span> <span class="s1">&#39;_num_freq_bins&#39;</span><span class="p">,</span>
+                           <span class="s1">&#39;_num_time_segments&#39;</span><span class="p">,</span> <span class="s1">&#39;_effective_length_for_transform&#39;</span><span class="p">])</span>
+
+    <span class="n">X_orig</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ensure_2d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">X_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Input has </span><span class="si">{</span><span class="n">X_orig</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> features (timestamps), but transformer &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;was fitted with </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="si">}</span><span class="s2"> features.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">X_processed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preprocess</span><span class="p">(</span><span class="n">X_orig</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="n">X_processed</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">all_spectrograms_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+        <span class="n">signal_single</span> <span class="o">=</span> <span class="n">X_processed</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>
+        <span class="n">current_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">signal_single</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">current_len</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span><span class="p">:</span>
+            <span class="n">pad_amount</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span> <span class="o">-</span> <span class="n">current_len</span>
+            <span class="n">signal_padded_final</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">signal_single</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pad_amount</span><span class="p">),</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">current_len</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span><span class="p">:</span>
+            <span class="n">signal_padded_final</span> <span class="o">=</span> <span class="n">signal_single</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">_effective_length_for_transform</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">signal_padded_final</span> <span class="o">=</span> <span class="n">signal_single</span>
+
+        <span class="n">q_spectrogram_ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_freq_bins</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">all_spectrograms_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">q_spectrogram_ts</span><span class="p">)</span>
+            <span class="k">continue</span>
+
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_time_segments</span><span class="p">):</span>
+            <span class="n">start</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_stride</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span>
+            <span class="n">segment</span> <span class="o">=</span> <span class="n">signal_padded_final</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">]</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span><span class="p">:</span>
+                <span class="n">segment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">segment</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">segment_length</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">segment</span><span class="p">)),</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">constant_values</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">windowed_segment</span> <span class="o">=</span> <span class="n">segment</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_window</span>
+            <span class="n">full_q_spectrum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_quantum_spectrum_for_segment</span><span class="p">(</span><span class="n">windowed_segment</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span>
+            <span class="n">q_spectrogram_ts</span><span class="p">[:,</span> <span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">full_q_spectrum</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">_num_freq_bins</span><span class="p">]</span>
+
+        <span class="n">all_spectrograms_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">q_spectrogram_ts</span><span class="p">)</span>
+
+    <span class="n">output_spectrograms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_spectrograms_list</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">output_spectrograms</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">output_spectrograms</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>

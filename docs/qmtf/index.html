@@ -1,0 +1,1701 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../qgaf/">
+      
+      
+        <link rel="next" href="../qrp/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Quantum Markov Transition Field (QMTF) - QTS2D</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quantum-markov-transition-field-qmtf" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="QTS2D" class="md-header__button md-logo" aria-label="QTS2D" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QTS2D
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quantum Markov Transition Field (QMTF)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="QTS2D" class="md-nav__button md-logo" aria-label="QTS2D" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    QTS2D
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QTS2D Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    License
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qgaf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Gramian Angular Field (QGAF)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Quantum Markov Transition Field (QMTF)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Markov Transition Field (QMTF)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf" class="md-nav__link">
+    <span class="md-ellipsis">
+      qmtf
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF" class="md-nav__link">
+    <span class="md-ellipsis">
+      QMTF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QMTF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF--references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      fit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.fit--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.fit--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.transform--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.transform--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qrp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Recurrence Plot (QRP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qsg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quantum Spectrogram (QSG)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    References
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Transformers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf" class="md-nav__link">
+    <span class="md-ellipsis">
+      qmtf
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF" class="md-nav__link">
+    <span class="md-ellipsis">
+      QMTF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="QMTF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF--references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      fit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="fit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.fit--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.fit--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.transform" class="md-nav__link">
+    <span class="md-ellipsis">
+      transform
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="transform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.transform--parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qts2d.encoding.qmtf.QMTF.transform--returns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Returns
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="quantum-markov-transition-field-qmtf">Quantum Markov Transition Field (QMTF)</h1>
+<p>QMTF encodes time series into images using quantum-inspired Markov transition fields.</p>
+<h2 id="parameters">Parameters</h2>
+<ul>
+<li><code>image_size</code>: Output image size (int)</li>
+<li><code>n_bins</code>: Number of bins for discretization (int)</li>
+<li><code>scaling</code>: 'minmax', 'standard', or None</li>
+</ul>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">from qts2d.encoding import QMTF
+qmtf = QMTF(image_size=32, n_bins=8, scaling='minmax')
+X_qmtf = qmtf.fit_transform(X)
+</code></pre>
+<hr />
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="qts2d.encoding.qmtf"></a>
+    <div class="doc doc-contents first">
+
+        <p>Quantum Quantum Markov Transition Fields (QMTF) implementation.</p>
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="qts2d.encoding.qmtf.QMTF" class="doc doc-heading">
+            <code>QMTF</code>
+
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="qts2d.base_transformer.BaseQuantumTransformer">BaseQuantumTransformer</span></code></p>
+
+
+        <p>Quantum Markov Transition Field (QMTF).</p>
+<p>This implementation uses Qiskit to represent transition probabilities
+from a classically computed Markov Transition Matrix (MTM) using quantum states.
+The MTF values are then derived from these quantum states.
+Time series are first discretized into bins. Optional scaling can be applied
+before discretization. The image size can be adjusted, with aggregation
+applied if the target image size is smaller than the number of timestamps.</p>
+<h4 id="qts2d.encoding.qmtf.QMTF--parameters">Parameters</h4>
+<p>image_size : int or float, default=1.0
+    Shape of the output images. If float, it represents a percentage
+    of the size of each time series and must be between 0 and 1.
+    If int, it's the exact size.
+n_bins : int, default=8
+    Number of bins for discretization.
+discretizer_strategy : {'uniform', 'quantile', 'normal'}, default='quantile'
+    Strategy used by KBinsDiscretizer to define the widths of the bins.
+    Actual available strategies depend on whether pyts is installed.
+    Common are 'uniform', 'quantile', 'normal'.
+overlapping : bool, default=False
+    Parameter for the segmentation function. If True, segments may overlap
+    (behavior depends on the specific segmentation function from pyts or fallback).
+flatten : bool, default=False
+    If True, images are flattened to be one-dimensional.
+scaling : str or None, default='minmax'
+    Time series scaling method applied <em>before</em> discretization.
+    Inherited from BaseQuantumTransformer. Options: 'minmax' (scales to [-1,1]),
+    'standard' (Z-score normalization), or None (no scaling).</p>
+<h4 id="qts2d.encoding.qmtf.QMTF--references">References</h4>
+<p>.. [1] Z. Wang and T. Oates, "Encoding Time Series as Images for Visual
+       Inspection and Classification Using Tiled Convolutional Neural
+       Networks." AAAI Workshop (2015).</p>
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>qts2d\encoding\qmtf.py</code></summary>
+                <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">QMTF</span><span class="p">(</span><span class="n">BaseQuantumTransformer</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Quantum Markov Transition Field (QMTF).</span>
+
+<span class="sd">    This implementation uses Qiskit to represent transition probabilities</span>
+<span class="sd">    from a classically computed Markov Transition Matrix (MTM) using quantum states.</span>
+<span class="sd">    The MTF values are then derived from these quantum states.</span>
+<span class="sd">    Time series are first discretized into bins. Optional scaling can be applied</span>
+<span class="sd">    before discretization. The image size can be adjusted, with aggregation</span>
+<span class="sd">    applied if the target image size is smaller than the number of timestamps.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image_size : int or float, default=1.0</span>
+<span class="sd">        Shape of the output images. If float, it represents a percentage</span>
+<span class="sd">        of the size of each time series and must be between 0 and 1.</span>
+<span class="sd">        If int, it&#39;s the exact size.</span>
+<span class="sd">    n_bins : int, default=8</span>
+<span class="sd">        Number of bins for discretization.</span>
+<span class="sd">    discretizer_strategy : {&#39;uniform&#39;, &#39;quantile&#39;, &#39;normal&#39;}, default=&#39;quantile&#39;</span>
+<span class="sd">        Strategy used by KBinsDiscretizer to define the widths of the bins.</span>
+<span class="sd">        Actual available strategies depend on whether pyts is installed.</span>
+<span class="sd">        Common are &#39;uniform&#39;, &#39;quantile&#39;, &#39;normal&#39;.</span>
+<span class="sd">    overlapping : bool, default=False</span>
+<span class="sd">        Parameter for the segmentation function. If True, segments may overlap</span>
+<span class="sd">        (behavior depends on the specific segmentation function from pyts or fallback).</span>
+<span class="sd">    flatten : bool, default=False</span>
+<span class="sd">        If True, images are flattened to be one-dimensional.</span>
+<span class="sd">    scaling : str or None, default=&#39;minmax&#39;</span>
+<span class="sd">        Time series scaling method applied *before* discretization.</span>
+<span class="sd">        Inherited from BaseQuantumTransformer. Options: &#39;minmax&#39; (scales to [-1,1]),</span>
+<span class="sd">        &#39;standard&#39; (Z-score normalization), or None (no scaling).</span>
+
+<span class="sd">    References</span>
+<span class="sd">    ----------</span>
+<span class="sd">    .. [1] Z. Wang and T. Oates, &quot;Encoding Time Series as Images for Visual</span>
+<span class="sd">           Inspection and Classification Using Tiled Convolutional Neural</span>
+<span class="sd">           Networks.&quot; AAAI Workshop (2015).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_size</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+                 <span class="n">discretizer_strategy</span><span class="o">=</span><span class="s1">&#39;quantile&#39;</span><span class="p">,</span>
+                 <span class="n">overlapping</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">flatten</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">scaling</span><span class="o">=</span><span class="s1">&#39;minmax&#39;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">scaling</span><span class="o">=</span><span class="n">scaling</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image_size</span> <span class="o">=</span> <span class="n">image_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span> <span class="o">=</span> <span class="n">n_bins</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">discretizer_strategy</span> <span class="o">=</span> <span class="n">discretizer_strategy</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overlapping</span> <span class="o">=</span> <span class="n">overlapping</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span> <span class="o">=</span> <span class="n">flatten</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fit the QMTF transformer.</span>
+
+<span class="sd">        Validates parameters and pre-calculates image size and qubit requirements.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like of shape (n_samples, n_timestamps)</span>
+<span class="sd">            Training input samples.</span>
+<span class="sd">        y : None</span>
+<span class="sd">            Ignored.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        self : object</span>
+<span class="sd">            Returns self.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_params</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits_for_bins_</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transform each time series into a Quantum MTF image.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        X : array-like, shape = (n_samples, n_timestamps)</span>
+<span class="sd">            Input data.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        X_new : array-like</span>
+<span class="sd">            Transformed data. Shape is (n_samples, image_size, image_size) or</span>
+<span class="sd">            (n_samples, image_size * image_size) if flatten=True.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ensure_2d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Input has </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> features, but transformer was fitted with &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="si">}</span><span class="s2"> features.&quot;</span>
+            <span class="p">)</span>
+
+        <span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;statevector&#39;</span><span class="p">)</span>
+        <span class="n">n_samples</span><span class="p">,</span> <span class="n">n_timestamps</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+
+        <span class="n">X_processed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preprocess</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+        <span class="n">discretizer</span> <span class="o">=</span> <span class="n">KBinsDiscretizer</span><span class="p">(</span><span class="n">n_bins</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">discretizer_strategy</span><span class="p">,</span> <span class="n">encode</span><span class="o">=</span><span class="s1">&#39;ordinal&#39;</span><span class="p">)</span>
+        <span class="n">X_binned</span> <span class="o">=</span> <span class="n">discretizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_processed</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+        <span class="n">X_binned</span> <span class="o">=</span> <span class="n">X_binned</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">X_mtm_counts</span> <span class="o">=</span> <span class="n">_mtf_counts</span><span class="p">(</span>
+            <span class="n">X_binned</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">n_timestamps</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span>
+        <span class="p">)</span>
+
+        <span class="n">X_mtm_probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">X_mtm_counts</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span> 
+            <span class="n">sample_mtm_counts</span> <span class="o">=</span> <span class="n">X_mtm_counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">sum_of_rows</span> <span class="o">=</span> <span class="n">sample_mtm_counts</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="n">non_zero_rows_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum_of_rows</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">non_zero_rows_mask</span><span class="p">):</span>
+                <span class="n">X_mtm_probs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">non_zero_rows_mask</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> \
+                    <span class="n">sample_mtm_counts</span><span class="p">[</span><span class="n">non_zero_rows_mask</span><span class="p">,</span> <span class="p">:]</span> <span class="o">/</span> <span class="n">sum_of_rows</span><span class="p">[</span><span class="n">non_zero_rows_mask</span><span class="p">]</span>
+
+        <span class="n">X_qmtf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_timestamps</span><span class="p">,</span> <span class="n">n_timestamps</span><span class="p">))</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits_for_bins_</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+            <span class="n">sample_mtm_prob_dist</span> <span class="o">=</span> <span class="n">X_mtm_probs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+            <span class="n">sample_binned_ts</span> <span class="o">=</span> <span class="n">X_binned</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>    
+
+            <span class="k">for</span> <span class="n">t1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_timestamps</span><span class="p">):</span>
+                <span class="n">source_bin_idx</span> <span class="o">=</span> <span class="n">sample_binned_ts</span><span class="p">[</span><span class="n">t1</span><span class="p">]</span>
+                <span class="n">probs_from_source_bin</span> <span class="o">=</span> <span class="n">sample_mtm_prob_dist</span><span class="p">[</span><span class="n">source_bin_idx</span><span class="p">,</span> <span class="p">:]</span>
+
+                <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">probs_from_source_bin</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+                    <span class="n">X_qmtf</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+                    <span class="k">continue</span> 
+
+                <span class="n">desired_amplitudes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">q</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+                <span class="n">sqrt_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">probs_from_source_bin</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+                <span class="n">norm_sqrt_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">sqrt_p</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">norm_sqrt_p</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">:</span> 
+                    <span class="n">normalized_sqrt_p</span> <span class="o">=</span> <span class="n">sqrt_p</span> <span class="o">/</span> <span class="n">norm_sqrt_p</span>
+                <span class="k">else</span><span class="p">:</span> 
+                    <span class="n">normalized_sqrt_p</span> <span class="o">=</span> <span class="n">sqrt_p</span> 
+
+                <span class="n">desired_amplitudes</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span><span class="p">]</span> <span class="o">=</span> <span class="n">normalized_sqrt_p</span>
+
+                <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+                <span class="n">qc</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">desired_amplitudes</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
+                <span class="n">qc</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">()</span> 
+
+                <span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+                <span class="n">statevector</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
+
+                <span class="k">for</span> <span class="n">t2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_timestamps</span><span class="p">):</span>
+                    <span class="n">target_bin_idx</span> <span class="o">=</span> <span class="n">sample_binned_ts</span><span class="p">[</span><span class="n">t2</span><span class="p">]</span>
+
+                    <span class="k">if</span> <span class="n">target_bin_idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">statevector</span><span class="o">.</span><span class="n">data</span><span class="p">):</span> 
+                        <span class="n">amplitude_of_target_bin</span> <span class="o">=</span> <span class="n">statevector</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">target_bin_idx</span><span class="p">]</span>
+                        <span class="n">probability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">amplitude_of_target_bin</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+                        <span class="n">X_qmtf</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]</span> <span class="o">=</span> <span class="n">probability</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">X_qmtf</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span> 
+
+        <span class="n">window_size</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">n_timestamps</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">remainder</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">X_aqmtf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+                <span class="n">X_qmtf</span><span class="p">,</span> 
+                <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">,</span> <span class="n">window_size</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">,</span> <span class="n">window_size</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">window_size</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">segmentation</span><span class="p">(</span>
+                <span class="n">n_timestamps</span><span class="o">=</span><span class="n">n_timestamps</span><span class="p">,</span>
+                <span class="n">n_segments</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">,</span>
+                <span class="n">overlapping</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">overlapping</span>
+            <span class="p">)</span>
+
+            <span class="n">X_aqmtf</span> <span class="o">=</span> <span class="n">_aggregated_mtf</span><span class="p">(</span>
+                <span class="n">X_qmtf</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">X_aqmtf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">X_aqmtf</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_check_params</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_timestamps</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate parameters and return internal image size.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_size</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span> <span class="o">|</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">floating</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;image_size&#39; must be an integer or a float.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_size</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_size</span> <span class="o">&lt;=</span> <span class="n">n_timestamps</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;If &#39;image_size&#39; is an integer (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">image_size</span><span class="si">}</span><span class="s2">), it must be &gt;= 1 &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;and &lt;= n_timestamps (</span><span class="si">{</span><span class="n">n_timestamps</span><span class="si">}</span><span class="s2">).&quot;</span>
+                <span class="p">)</span>
+            <span class="n">image_size_internal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_size</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">0.</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_size</span> <span class="o">&lt;=</span> <span class="mf">1.</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;If &#39;image_size&#39; is a float (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">image_size</span><span class="si">}</span><span class="s2">), it must be &gt; 0. and &lt;= 1.&quot;</span>
+                <span class="p">)</span>
+            <span class="n">image_size_internal</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">image_size</span> <span class="o">*</span> <span class="n">n_timestamps</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span> <span class="o">|</span> <span class="n">np</span><span class="o">.</span><span class="n">integer</span><span class="p">)):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;n_bins&#39; must be an integer.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;n_bins&#39; (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span><span class="si">}</span><span class="s2">) must be &gt;= 2.&quot;</span><span class="p">)</span>
+
+        <span class="n">allowed_strategies</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;uniform&#39;</span><span class="p">,</span> <span class="s1">&#39;quantile&#39;</span><span class="p">,</span> <span class="s1">&#39;kmeans&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">discretizer_strategy</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_strategies</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: &#39;discretizer_strategy&#39; (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">discretizer_strategy</span><span class="si">}</span><span class="s2">) &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;is not in the listed set </span><span class="si">{</span><span class="n">allowed_strategies</span><span class="si">}</span><span class="s2">. &quot;</span>
+                <span class="s2">&quot;Ensure the chosen KBinsDiscretizer backend supports it.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">image_size_internal</span>
+</code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="qts2d.encoding.qmtf.QMTF.fit" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Fit the QMTF transformer.</p>
+<p>Validates parameters and pre-calculates image size and qubit requirements.</p>
+<h5 id="qts2d.encoding.qmtf.QMTF.fit--parameters">Parameters</h5>
+<p>X : array-like of shape (n_samples, n_timestamps)
+    Training input samples.
+y : None
+    Ignored.</p>
+<h5 id="qts2d.encoding.qmtf.QMTF.fit--returns">Returns</h5>
+<p>self : object
+    Returns self.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>qts2d\encoding\qmtf.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Fit the QMTF transformer.</span>
+
+<span class="sd">    Validates parameters and pre-calculates image size and qubit requirements.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : array-like of shape (n_samples, n_timestamps)</span>
+<span class="sd">        Training input samples.</span>
+<span class="sd">    y : None</span>
+<span class="sd">        Ignored.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    self : object</span>
+<span class="sd">        Returns self.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_params</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits_for_bins_</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="n">log2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="bp">self</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="qts2d.encoding.qmtf.QMTF.transform" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Transform each time series into a Quantum MTF image.</p>
+<h5 id="qts2d.encoding.qmtf.QMTF.transform--parameters">Parameters</h5>
+<p>X : array-like, shape = (n_samples, n_timestamps)
+    Input data.</p>
+<h5 id="qts2d.encoding.qmtf.QMTF.transform--returns">Returns</h5>
+<p>X_new : array-like
+    Transformed data. Shape is (n_samples, image_size, image_size) or
+    (n_samples, image_size * image_size) if flatten=True.</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>qts2d\encoding\qmtf.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Transform each time series into a Quantum MTF image.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    X : array-like, shape = (n_samples, n_timestamps)</span>
+<span class="sd">        Input data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    X_new : array-like</span>
+<span class="sd">        Transformed data. Shape is (n_samples, image_size, image_size) or</span>
+<span class="sd">        (n_samples, image_size * image_size) if flatten=True.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">check_is_fitted</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">check_array</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">ensure_2d</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Input has </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> features, but transformer was fitted with &quot;</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">n_features_in_</span><span class="si">}</span><span class="s2"> features.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="n">simulator</span> <span class="o">=</span> <span class="n">AerSimulator</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;statevector&#39;</span><span class="p">)</span>
+    <span class="n">n_samples</span><span class="p">,</span> <span class="n">n_timestamps</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+
+    <span class="n">X_processed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_preprocess</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+    <span class="n">discretizer</span> <span class="o">=</span> <span class="n">KBinsDiscretizer</span><span class="p">(</span><span class="n">n_bins</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">discretizer_strategy</span><span class="p">,</span> <span class="n">encode</span><span class="o">=</span><span class="s1">&#39;ordinal&#39;</span><span class="p">)</span>
+    <span class="n">X_binned</span> <span class="o">=</span> <span class="n">discretizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_processed</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">X_binned</span> <span class="o">=</span> <span class="n">X_binned</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">X_mtm_counts</span> <span class="o">=</span> <span class="n">_mtf_counts</span><span class="p">(</span>
+        <span class="n">X_binned</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="n">n_timestamps</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span>
+    <span class="p">)</span>
+
+    <span class="n">X_mtm_probs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">X_mtm_counts</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span> 
+        <span class="n">sample_mtm_counts</span> <span class="o">=</span> <span class="n">X_mtm_counts</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">sum_of_rows</span> <span class="o">=</span> <span class="n">sample_mtm_counts</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">non_zero_rows_mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum_of_rows</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">non_zero_rows_mask</span><span class="p">):</span>
+            <span class="n">X_mtm_probs</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">non_zero_rows_mask</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> \
+                <span class="n">sample_mtm_counts</span><span class="p">[</span><span class="n">non_zero_rows_mask</span><span class="p">,</span> <span class="p">:]</span> <span class="o">/</span> <span class="n">sum_of_rows</span><span class="p">[</span><span class="n">non_zero_rows_mask</span><span class="p">]</span>
+
+    <span class="n">X_qmtf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_timestamps</span><span class="p">,</span> <span class="n">n_timestamps</span><span class="p">))</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_qubits_for_bins_</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+        <span class="n">sample_mtm_prob_dist</span> <span class="o">=</span> <span class="n">X_mtm_probs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+        <span class="n">sample_binned_ts</span> <span class="o">=</span> <span class="n">X_binned</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span>    
+
+        <span class="k">for</span> <span class="n">t1</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_timestamps</span><span class="p">):</span>
+            <span class="n">source_bin_idx</span> <span class="o">=</span> <span class="n">sample_binned_ts</span><span class="p">[</span><span class="n">t1</span><span class="p">]</span>
+            <span class="n">probs_from_source_bin</span> <span class="o">=</span> <span class="n">sample_mtm_prob_dist</span><span class="p">[</span><span class="n">source_bin_idx</span><span class="p">,</span> <span class="p">:]</span>
+
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">probs_from_source_bin</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">X_qmtf</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="mf">0.0</span>
+                <span class="k">continue</span> 
+
+            <span class="n">desired_amplitudes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">q</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">complex</span><span class="p">)</span>
+            <span class="n">sqrt_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">probs_from_source_bin</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+            <span class="n">norm_sqrt_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">sqrt_p</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">norm_sqrt_p</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">:</span> 
+                <span class="n">normalized_sqrt_p</span> <span class="o">=</span> <span class="n">sqrt_p</span> <span class="o">/</span> <span class="n">norm_sqrt_p</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="n">normalized_sqrt_p</span> <span class="o">=</span> <span class="n">sqrt_p</span> 
+
+            <span class="n">desired_amplitudes</span><span class="p">[:</span><span class="bp">self</span><span class="o">.</span><span class="n">n_bins</span><span class="p">]</span> <span class="o">=</span> <span class="n">normalized_sqrt_p</span>
+
+            <span class="n">qc</span> <span class="o">=</span> <span class="n">QuantumCircuit</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+            <span class="n">qc</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">desired_amplitudes</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
+            <span class="n">qc</span><span class="o">.</span><span class="n">save_statevector</span><span class="p">()</span> 
+
+            <span class="n">result</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+            <span class="n">statevector</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get_statevector</span><span class="p">(</span><span class="n">qc</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">t2</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_timestamps</span><span class="p">):</span>
+                <span class="n">target_bin_idx</span> <span class="o">=</span> <span class="n">sample_binned_ts</span><span class="p">[</span><span class="n">t2</span><span class="p">]</span>
+
+                <span class="k">if</span> <span class="n">target_bin_idx</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">statevector</span><span class="o">.</span><span class="n">data</span><span class="p">):</span> 
+                    <span class="n">amplitude_of_target_bin</span> <span class="o">=</span> <span class="n">statevector</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">target_bin_idx</span><span class="p">]</span>
+                    <span class="n">probability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">amplitude_of_target_bin</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+                    <span class="n">X_qmtf</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]</span> <span class="o">=</span> <span class="n">probability</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">X_qmtf</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span> 
+
+    <span class="n">window_size</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="nb">divmod</span><span class="p">(</span><span class="n">n_timestamps</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">remainder</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">X_aqmtf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span>
+            <span class="n">X_qmtf</span><span class="p">,</span> 
+            <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">,</span> <span class="n">window_size</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">,</span> <span class="n">window_size</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">window_size</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">segmentation</span><span class="p">(</span>
+            <span class="n">n_timestamps</span><span class="o">=</span><span class="n">n_timestamps</span><span class="p">,</span>
+            <span class="n">n_segments</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">,</span>
+            <span class="n">overlapping</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">overlapping</span>
+        <span class="p">)</span>
+
+        <span class="n">X_aqmtf</span> <span class="o">=</span> <span class="n">_aggregated_mtf</span><span class="p">(</span>
+            <span class="n">X_qmtf</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_image_size_internal_</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span>
+        <span class="p">)</span>
+
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">flatten</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">X_aqmtf</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">X_aqmtf</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,7 @@
+site_name: QTS2D
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
