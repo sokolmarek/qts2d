@@ -69,10 +69,22 @@ For more detailed examples, please refer to the `examples/` directory for each s
 We welcome everyone to contribute to ```qts2d```! The library is still evolving and far from perfect, so your help is especially valuable. Please feel free to submit a pull request or open an issue. Detailed contribution guidelines will be shared soon along with the documentation. Stay tuned!
 
 ## Citation
-Coming soon!
+You can cite [QTS2D](https://doi.org/10.1016/j.softx.2025.102327) as follows:
+```
+@article{sokol2025qts2d,
+	title        = {QTS2D: Quantum-based image encoding of time series},
+	author       = {Marek Sokol and Petr Volf and Jan Hejda and Patrik Kutílek},
+	year         = 2025,
+	journal      = {SoftwareX},
+	volume       = 31,
+	pages        = 102327,
+	doi          = {https://doi.org/10.1016/j.softx.2025.102327},
+	issn         = {2352-7110},
+	url          = {https://www.sciencedirect.com/science/article/pii/S2352711025002936}
+}
+```
 
 ## License
-
 This project is licensed under the BSD 3-Clause License - see the [LICENSE.txt](LICENSE.txt) file for details.
 
 ## References
